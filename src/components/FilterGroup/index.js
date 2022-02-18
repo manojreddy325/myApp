@@ -149,13 +149,13 @@ class FilterGroup extends Component {
     )
   }
 
+  onChangeRadioButton = event => {
+    const {updateSalaryRange} = this.props
+    updateSalaryRange(event.target.value)
+  }
+
   renderRadioButtonContainer = () => {
     const {salaryRangesList, updateSalaryRange} = this.props
-
-    const onChangeRadioButton = event => {
-      updateSalaryRange(event.target.value)
-    }
-
     return (
       <div className="radio-button-group-container">
         <h1 className="radio-button-heading">Salary Range</h1>
@@ -168,7 +168,7 @@ class FilterGroup extends Component {
               <input
                 type="radio"
                 id={eachsalaryRangesType.salaryRangeId}
-                onChange={onChangeRadioButton}
+                onChange={this.onChangeRadioButton}
                 value={eachsalaryRangesType.salaryRangeId}
                 name="salary"
               />

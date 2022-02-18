@@ -113,7 +113,7 @@ class Jobs extends Component {
       {
         activeSalaryRange: salary,
       },
-      this.getJobsData(),
+      this.getJobsData,
     )
   }
 
